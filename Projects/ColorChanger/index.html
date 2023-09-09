@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Background Color Changer</title>
+</head>
+<body style="transition: .5s ease-in-out all;">
+    <div>
+        <ul style="display: flex; list-style: none; justify-content: center; flex-wrap: wrap;">
+            <li class="button" style="width:100px; height:100px; border:2px solid black; margin:20px; background-color: #212121;" />
+            <li class="button" style="width:100px; height:100px; border:2px solid black; margin:20px; background-color: #ffff;" />
+            <li class="button" style="width:100px; height:100px; border:2px solid black; margin:20px; background-color: rgb(120, 1, 218);" />
+            <li class="button" style="width:100px; height:100px; border:2px solid black; margin:20px; background-color: rgb(219, 16, 128);" />
+            <li class="button" style="width:100px; height:100px; border:2px solid black; margin:20px; background-color: rgb(0, 255, 0);" />
+        </ul>
+    </div>
+</body>
+<script>
+    const buttons = document.querySelectorAll('.button')
+    const body = document.querySelector('body')
+
+    buttons.forEach((val)=>{
+        val.style.cursor = 'pointer'
+        val.addEventListener('click', (e)=>{
+            const color = e.target.style.backgroundColor
+            body.style.backgroundColor = color
+        })
+    })
+</script>
+</html>

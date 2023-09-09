@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BMI Calculator</title>
+  </head>
+  <body style="background-color: #212121; color: white">
+    <div
+      style="
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+      "
+    >
+      <!-- Heading -->
+      <h2>BMI Calculator</h2>
+
+      <!-- BMI Box -->
+      <form style="display: flex; flex-direction: column; gap: 50px;">
+        <input type="number" id="height" placeholder="Height in CM" />
+        <input type="number" id="weight" placeholder="Weight in KG" />
+        <button id="submit" type="submit" style="background-color: transparent; color: white; padding: 10px; border: .5px solid white; border-radius: 6px;">Calculate</button>
+      </form>
+
+
+      <!-- Result Para  -->
+      <p id="result"></p>
+
+    </div>
+  </body>
+
+  <script>
+    const form = document.querySelector('form')
+    
+    const handleBMI = (e) =>{
+        e.preventDefault()
+        const height = Number(document.querySelector('#height').value)
+        const weight = Number(document.querySelector('#weight').value)
+        const resultDiv = document.getElementById('result')
+
+        const result = height/weight
+        
+        if(!isNaN(result)){
+            resultDiv.innerHTML = result
+        }
+    }
+    
+    form.addEventListener('click', handleBMI)
+  </script>
+</html>
