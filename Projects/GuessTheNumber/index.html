@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Guess The Number</title>
+  </head>
+  <body
+    style="
+      background-color: #212121;
+      color: #ffff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 97vh;
+      flex-direction: column;
+    "
+  >
+      <!-- Heading -->
+      <h1>Guess The Number b/w 0-10</h1>
+
+      <!-- Form -->
+     <form id="form">
+      <input id="usrNum" type="number" placeholder="Guess a Number" style="background-color: transparent; border:none; border-bottom: 1px solid white; color: white; " />
+      <button>Check</button>
+     </form>
+
+     <div>
+        <p id="usrWin"></p>
+        <p id="attempts">Attempts Remaining: 10</p>
+     </div>
+    </div>
+  </body>
+
+  <script>
+    const form = document.querySelector('#form')
+    const userNumber = document.querySelector('#usrNum')
+    const attempts = document.querySelector('#attempts')
+    let counter = 10
+
+    const handleLogic = (e) =>{
+        e.preventDefault()
+        const usrWin = document.querySelector('#usrWin')
+        const randomNum = Math.round(Math.random()*10)
+
+        if(counter === 0){
+            window.location.reload()
+        }
+
+        if(attempts!==0 && randomNum === Number(userNumber.value)){
+            
+        }
+        
+        attempts.innerHTML = `Attempts Remaining: ${--counter}`
+    }
+
+    form.addEventListener('click',handleLogic)
+    
+  </script>
+</html>
